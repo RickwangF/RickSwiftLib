@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RickSwiftLib_Example' do
+  pod 'RickSwiftLib', :path => '../'
+
+  target 'RickSwiftLib_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
