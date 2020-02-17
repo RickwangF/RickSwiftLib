@@ -33,13 +33,13 @@ public extension Codeable {
     mutating func structCodableFinish() {}
     
     // TODO: 字典转模型
-    static func zs_modelFromDict(_ dict: [String : Any]?) throws -> Self {
+    static func modelFromDict(_ dict: [String : Any]?) throws -> Self {
         
-        guard let JSONString = dict?.zs_json else {
+        guard let JSONString = dict?.json else {
             throw CodeableError.dictToJsonFail
         }
         
-        guard let obj = try? zs_modelFromJSON(JSONString) else {
+        guard let obj = try? modelFromJSON(JSONString) else {
             throw CodeableError.dictToJsonFail
         }
         
@@ -47,7 +47,7 @@ public extension Codeable {
     }
     
     // TODO: JSON转模型
-    static func zs_modelFromJSON(_ JSONString: String?) throws -> Self {
+    static func modelFromJSON(_ JSONString: String?) throws -> Self {
 
         guard let jsonData = JSONString?.data(using: .utf8) else {
             throw CodeableError.jsonToDataFail
@@ -74,7 +74,7 @@ public extension Codeable {
     }
     
     // TODO: 模型转字典
-    var zs_dictionary: [String : Any] {
+    var dictionary: [String : Any] {
         
         let mirro = Mirror(reflecting: self)
         var dict = [String : Any]()
@@ -85,9 +85,9 @@ public extension Codeable {
     }
     
     // TODO: 模型转JSON字符串
-    func zs_toJSONString() throws -> String {
+    func toJSONString() throws -> String {
         
-        guard let string = self.zs_dictionary.zs_json else {
+        guard let string = self.dictionary.json else {
             throw CodeableError.modelToJsonFail
         }
         
@@ -98,7 +98,7 @@ public extension Codeable {
 
 public extension Dictionary {
     
-    var zs_json: String? {
+    var json: String? {
         
         guard JSONSerialization.isValidJSONObject(self) else { return nil }
         
@@ -110,7 +110,7 @@ public extension Dictionary {
 
 public extension Array {
     
-    var zs_json: String? {
+    var json: String? {
     
         guard JSONSerialization.isValidJSONObject(self) else { return nil }
         
@@ -119,9 +119,9 @@ public extension Array {
         return String(data: newData, encoding: .utf8)
     }
     
-    func zs_modelFromJson<T: Decodable>(_ type: [T].Type) throws -> Array<T> {
+    func modelFromJson<T: Decodable>(_ type: [T].Type) throws -> Array<T> {
         
-        guard let JSONString = zs_json else {
+        guard let JSONString = json else {
             throw CodeableError.dictToJsonFail
         }
         
@@ -142,19 +142,19 @@ public extension Array {
 
 public extension String {
     
-    var zs_dictionary: [String : Any]? {
-        return Data(utf8).zs_dictionary
+    var dictionary: [String : Any]? {
+        return Data(utf8).dictionary
     }
     
-    var zs_array: [Any]? {
-        return Data(utf8).zs_array
+    var array: [Any]? {
+        return Data(utf8).array
     }
 }
 
 
 public extension Data {
     
-    var zs_dictionary: [String : Any]? {
+    var dictionary: [String : Any]? {
         
         guard let dict = try? JSONSerialization.jsonObject(with: self, options: .mutableContainers) else {
             
@@ -164,7 +164,7 @@ public extension Data {
         return dict as? [String : Any]
     }
     
-    var zs_array: [Any]? {
+    var array: [Any]? {
         
         guard let dict = try? JSONSerialization.jsonObject(with: self, options: .mutableContainers) else {
             
