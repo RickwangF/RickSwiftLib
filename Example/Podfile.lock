@@ -1,0 +1,16 @@
+PODS:
+  - RickSwiftLib (0.1.0)
+
+DEPENDENCIES:
+  - RickSwiftLib (from `../`)
+
+EXTERNAL SOURCES:
+  RickSwiftLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RickSwiftLib: 63b4f1db20e0fa4a5553941e7325710065b3f2cd
+
+PODFILE CHECKSUM: e8b862f04abd1d96ab95ba56588a406432567cf8
+
+COCOAPODS: 1.7.4

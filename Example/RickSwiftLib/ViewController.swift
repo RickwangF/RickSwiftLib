@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import RickSwiftLib
 
 class ViewController: UIViewController {
+    
+    lazy var testView: UIView! = {
+        let view = UIView()
+        self.view.addSubview(view)
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        testView.frame = CGRect(x: self.view.originX, y: self.view.originY, width: DeviceSize.width, height: DeviceSize.height)
     }
 
     override func didReceiveMemoryWarning() {

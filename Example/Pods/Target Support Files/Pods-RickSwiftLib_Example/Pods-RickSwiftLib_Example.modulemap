@@ -1,0 +1,6 @@
+framework module Pods_RickSwiftLib_Example {
+  umbrella header "Pods-RickSwiftLib_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_RickSwiftLib_Tests {
+  umbrella header "Pods-RickSwiftLib_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

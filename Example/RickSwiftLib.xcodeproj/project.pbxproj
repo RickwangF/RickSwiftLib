@@ -39,11 +39,11 @@
 		607FACE51AFB9204008FA782 /* RickSwiftLib_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickSwiftLib_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6DA861E4705E281310DC5D15 /* RickSwiftLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RickSwiftLib.podspec; path = ../RickSwiftLib.podspec; sourceTree = "<group>"; };
+		6DA861E4705E281310DC5D15 /* RickSwiftLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RickSwiftLib.podspec; path = ../RickSwiftLib.podspec; sourceTree = "<group>"; };
 		78A079AF5F7E2354552DC4D8 /* Pods-RickSwiftLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickSwiftLib_Example.release.xcconfig"; path = "Target Support Files/Pods-RickSwiftLib_Example/Pods-RickSwiftLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		7FA78435CF651B385C4D9E62 /* Pods-RickSwiftLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickSwiftLib_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RickSwiftLib_Tests/Pods-RickSwiftLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8527090BF4FC034B7C48A4F3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CE0352959A8A921505C8D89B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8527090BF4FC034B7C48A4F3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CE0352959A8A921505C8D89B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F585CED0B55A6BD00EA2E85A /* Pods-RickSwiftLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickSwiftLib_Example.debug.xcconfig"; path = "Target Support Files/Pods-RickSwiftLib_Example/Pods-RickSwiftLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F928B354C3478DB29D873906 /* Pods_RickSwiftLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickSwiftLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4035D58A93FD60952A5684 /* Pods-RickSwiftLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickSwiftLib_Tests.release.xcconfig"; path = "Target Support Files/Pods-RickSwiftLib_Tests/Pods-RickSwiftLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,7 +77,6 @@
 				7FA78435CF651B385C4D9E62 /* Pods-RickSwiftLib_Tests.debug.xcconfig */,
 				FB4035D58A93FD60952A5684 /* Pods-RickSwiftLib_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -171,7 +170,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				0702356CED420CD2FB2F6EC6 /* [CP] Embed Pods Frameworks */,
+				1E7EBE43F60545E3519A6FAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8W7NY9PTY5;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8W7NY9PTY5;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -262,7 +264,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0702356CED420CD2FB2F6EC6 /* [CP] Embed Pods Frameworks */ = {
+		1E7EBE43F60545E3519A6FAC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -419,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -478,6 +480,7 @@
 			baseConfigurationReference = F585CED0B55A6BD00EA2E85A /* Pods-RickSwiftLib_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W7NY9PTY5;
 				INFOPLIST_FILE = RickSwiftLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +496,7 @@
 			baseConfigurationReference = 78A079AF5F7E2354552DC4D8 /* Pods-RickSwiftLib_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8W7NY9PTY5;
 				INFOPLIST_FILE = RickSwiftLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -507,6 +511,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FA78435CF651B385C4D9E62 /* Pods-RickSwiftLib_Tests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 8W7NY9PTY5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +535,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB4035D58A93FD60952A5684 /* Pods-RickSwiftLib_Tests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 8W7NY9PTY5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
