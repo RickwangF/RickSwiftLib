@@ -284,7 +284,7 @@ public extension String {
         return isInt || isFloat
     }
     
-    var isValidHttoURL: Bool {
+    var isValidHttpURL: Bool {
         let predcate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", #"http[s]{0,1}://[^\s]*"#)
         return predcate.evaluate(with: self)
     }

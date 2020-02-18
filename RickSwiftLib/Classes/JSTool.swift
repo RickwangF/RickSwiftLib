@@ -32,11 +32,11 @@ import WebKit
     
     public weak var delegate: JSToolDelegate?
     
-    public var isAlreadyFuncs: Bool = false
+    public var isHaveAdded: Bool = false
     
     public func addScriptMessageHandler(_ webView: WKWebView, funcNames: [String]) {
         
-        isAlreadyFuncs = true
+        isHaveAdded = true
         
         let userContentController = webView.configuration.userContentController
         
@@ -47,7 +47,7 @@ import WebKit
     
     public func removeScriptMessageHandler(_ webView: WKWebView, funcNames: [String]) {
         
-        isAlreadyFuncs = false
+        isHaveAdded = false
         
         let userContentController = webView.configuration.userContentController
         
@@ -99,3 +99,61 @@ import WebKit
     }
 }
 
+public extension JSTool {
+    
+    struct DefaultScriptMessage {
+        
+        public static let route = "App_Route"
+        public static let share = "App_Share"
+        public static let copy  = "App_Copy"
+        public static let setStatusMode = "App_SetStatusMode"
+        public static let getUserInfo = "App_GetUserInfo"
+        public static let syncUserInfo = "App_SaveUserInfo"
+        public static let connectSever = "App_ConnectSever"
+        public static let previewMedia = "App_PreviewMedia"
+        public static let mediaPick = "App_MediaPick"
+        public static let cameraPick = "App_TakePhoto"
+        public static let popToRootController = "App_PopToRootController"
+        
+        fileprivate static let functions: [String] =
+            [DefaultScriptMessage.route,
+             DefaultScriptMessage.share,
+             DefaultScriptMessage.copy,
+             DefaultScriptMessage.setStatusMode,
+             DefaultScriptMessage.getUserInfo,
+             DefaultScriptMessage.syncUserInfo,
+             DefaultScriptMessage.connectSever,
+             DefaultScriptMessage.previewMedia,
+             DefaultScriptMessage.mediaPick,
+             DefaultScriptMessage.cameraPick,
+             DefaultScriptMessage.popToRootController]
+    }
+    
+    struct JavascriptFunc {
+        
+    }
+    
+    func addDefultScriptMessageHandler(_ webView: WKWebView, other funcNames: [String]? = nil) {
+        
+        if isHaveAdded {
+            removeDefultScriptMessageHandler(webView)
+        }
+        
+        var funcs = Array(DefaultScriptMessage.functions)
+        
+        if funcNames != nil {
+            funcs += funcNames!
+        }
+        addScriptMessageHandler(webView, funcNames: funcs)
+    }
+    
+    func removeDefultScriptMessageHandler(_ webView: WKWebView, other funcNames: [String]? = nil) {
+        
+        var funcs = Array(DefaultScriptMessage.functions)
+        
+        if funcNames != nil {
+            funcs += funcNames!
+        }
+        removeScriptMessageHandler(webView, funcNames: funcs)
+    }
+}
